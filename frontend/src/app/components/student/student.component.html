@@ -1,0 +1,65 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Students</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Students</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Student List</h3>
+                            <a routerLink="/student/create" class="btn btn-primary float-right" ><i class="fas fa-plus"></i> Add Student</a>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th>Name</th>
+                                        <th>Class</th>
+                                        <th style="width: 40px">Gender</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngIf="students">
+                                    <tr *ngFor="let student of students">
+                                        <td>{{ student.id }}</td>
+                                        <td>{{ student.name}} </td>
+                                        <td>{{ student.student_class}} </td>
+                                        <td>{{ student.gender == 1 ? 'Male' : 'Female'}} </td>
+                                        <td>
+                                            <button class="btn btn-small btn-info" (click)="OnStudentEdit(student)"><i class="fas fa-pen"></i></button>
+                                            <button class="btn btn-small btn-danger ml-1" (click)="OnStudentDelete(student.id)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>

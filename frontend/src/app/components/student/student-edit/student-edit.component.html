@@ -1,0 +1,72 @@
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<h1>Edit Student</h1>
+				</div>
+				<div class="col-sm-6">
+					<ol class="breadcrumb float-sm-right">
+						<li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+						<li class="breadcrumb-item"><a routerLink="/student">Student</a></li>
+						<li class="breadcrumb-item active">Edit</li>
+					</ol>
+				</div>
+			</div>
+		</div><!-- /.container-fluid -->
+	</section>
+
+	<!-- Main content -->
+	<section class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- left column -->
+				<div class="col-md-12">
+					<!-- general form elements -->
+					<div class="card card-primary">
+						<div class="card-header">
+							<h3 class="card-title">Edit Student Details</h3>
+						</div>
+						<!-- /.card-header -->
+						<!-- form start -->
+						<form method="post" #stdEditF = "ngForm" (ngSubmit)="onSubmit(stdEditF)">
+							<div class="card-body">
+								<div class="form-group">
+									<label for="name">Name</label>
+									<input type="text" class="form-control" id="name"
+										placeholder="Enter name" name="name" [(ngModel)]="name" required>
+								</div>
+								<div class="form-group">
+									<label for="class">Class</label>
+									<input type="text" class="form-control" id="class"
+										placeholder="Enter class" name="class" [(ngModel)]="stdClass" required>
+								</div>
+								<div class="form-group">
+									<label for="class">Gender</label>
+									<select class="form-control" id="gender" name="gender" [(ngModel)]="gender" required>
+										<option value="">Select gender</option>
+										<option value="1">Male</option>
+										<option value="2">Female</option>
+									</select>
+								</div>
+								<div class="form-group" *ngIf="courses">
+									<label for="class">Select Course</label>
+									<select class="form-control" id="courses" name="courses" [(ngModel)]="selectedCrs" required multiple>
+										<option value="">Select Course</option>
+										<option *ngFor="let c of courses" value="{{c.id}}">{{ c.name }}</option>
+									</select>
+								</div>
+							</div>
+							<!-- /.card-body -->
+
+							<div class="card-footer">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
