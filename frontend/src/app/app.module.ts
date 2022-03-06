@@ -16,6 +16,8 @@ import { StudentCreateComponent } from './components/student/student-create/stud
 import { StudentEditComponent } from './components/student/student-edit/student-edit.component';
 import { CourseCreateComponent } from './components/course/course-create/course-create.component';
 import { CourseEditComponent } from './components/course/course-edit/course-edit.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
+import { VimeoUrlPipe } from './components/playlist/vimeo-url.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CourseEditComponent } from './components/course/course-edit/course-edit
     StudentCreateComponent,
     StudentEditComponent,
     CourseCreateComponent,
-    CourseEditComponent
+    CourseEditComponent,
+    PlaylistComponent,
+    VimeoUrlPipe
   ],
   imports: [
     BrowserModule,
