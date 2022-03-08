@@ -20,13 +20,24 @@
     <!-- Main content -->
     <section class="content">
 
-        <!-- Default box -->
-        <div class="card" *ngFor="let video of videos | async">
-            <div class="card-header">
-                <h3 class="card-title">{{video.title}}</h3>
+        <div class="row">
+            <div class="col-8">
+                <div class="player-div">
+                    <h1>{{ video_title }}</h1>
+                    <div class="player" #player_container></div>
+                    <p [innerHTML]="video_description"></p>
+                </div>
             </div>
-            <div class="card-body">
-                <iframe [src]="video.url | vimeoUrl" width="500" height="350" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <div class="col-4">
+                <div class="card" *ngFor="let video of videos | async">
+                    <div class="card-header">
+                        <h3 class="card-title">{{video.title}}</h3>
+                    </div>
+                    <div class="card-body">
+                        <img class="thumb-img" (click)="loadVideo(video)" src="{{ video.thumbnail_medium }}" />
+                        <!-- <iframe [src]="video.url | vimeoUrl" width="500" height="350" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+                    </div>
+                </div>
             </div>
         </div>
     </section>

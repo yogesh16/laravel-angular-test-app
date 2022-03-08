@@ -2,3 +2,33 @@
     margin-left: 0px !important;
     padding: 10px;
 }
+
+.player-div{
+    position: fixed;
+}
+
+.player-div p{
+    padding-top: 10px;
+}
+
+.player{
+    width: 100%;
+    height: auto;
+}
+
+.player img{
+    margin-bottom: 10px;
+}
+
+.playBtn{
+    margin: 0 auto;
+}
+
+.thumb-img { 
+    box-shadow: 1px 1px 10px #999; 
+    margin: 2px;
+    cursor: pointer;
+    display:inline-block;
+    *display:inline;
+    vertical-align:top;
+}
